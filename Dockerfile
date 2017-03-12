@@ -3,11 +3,11 @@ FROM beevelop/android-nodejs:latest
 RUN curl https://install.meteor.com/ | sh
 
 RUN apt-get update && apt-get install -y git
-RUN echo y | android update sdk --no-ui --all --filter "extra-android-m2repository"
-RUN echo y | android update sdk --no-ui --all --filter "extra-google-google_play_services"
-RUN echo y | android update sdk --no-ui --all --filter "extra-google-m2repository"
-RUN echo y | android update sdk --no-ui --all --filter "extra-android-support"
+&& echo y | android update sdk --no-ui --all --filter "extra-android-m2repository"
+&& echo y | android update sdk --no-ui --all --filter "extra-google-google_play_services"
+&& echo y | android update sdk --no-ui --all --filter "extra-google-m2repository"
+&& echo y | android update sdk --no-ui --all --filter "extra-android-support"
 
 RUN npm install -g cordova
-RUN npm install -g mup@latest
-RUN npm install -g ssh2
+&& npm install -g mup@latest
+&& npm install -g ssh2
